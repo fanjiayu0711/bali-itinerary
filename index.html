@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFFDF9">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="巴厘岛四日行程 2026/11/27–11/30 · 水明漾、乌布、乌鲁瓦图">
+<title>巴厘岛四日 · 行程手册 11/27–11/30</title>
+<style>
+:root{
+  --ink:#1E1A16; --body:#4C463E; --muted:#8B8177; --faint:#B7AEA3;
+  --hair:#ECE4D9; --hair2:#DCD2C4; --paper:#FFFDF9; --soft:#FAF5ED;
+  --coral:#EE6C4D; --sun:#DE9A26; --mint:#2C9C79; --sea:#3A85CB;
+  --nav:58px;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--body);font:15px/1.68 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;font-size:inherit;color:inherit}
+img,svg{max-width:100%}
+
+/* ---------- top bar ---------- */
+.bar{position:sticky;top:0;z-index:60;height:var(--nav);display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px;background:rgba(255,253,249,.94);border-bottom:1px solid var(--hair);
+  -webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px)}
+.bar::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;
+  background:linear-gradient(90deg,var(--coral),var(--sun) 34%,var(--mint) 66%,var(--sea));opacity:.9}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:16px;color:var(--ink);letter-spacing:.01em}
+.brand svg{width:22px;height:22px;fill:var(--coral)}
+.bar .day-tag{font-size:12px;color:var(--muted);letter-spacing:.04em}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;padding:30px 20px 22px;
+  background:linear-gradient(170deg,#FFF4EC 0%,#FFFBF4 42%,var(--paper) 100%)}
+.hero-in{max-width:1180px;margin:0 auto}
+.eyebrow{margin:0 0 10px;font-size:10.5px;letter-spacing:.22em;color:var(--coral);font-weight:700}
+.hero h1{margin:0 0 12px;font-size:31px;line-height:1.28;letter-spacing:-.01em;color:var(--ink);font-weight:800}
+.hero .lede{margin:0 0 20px;max-width:640px;font-size:14px;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:10px}
+.meta>div{flex:1 1 190px;min-width:150px;background:#fff;border:1px solid var(--hair);border-radius:12px;padding:10px 13px}
+.meta span{display:block;font-size:10.5px;letter-spacing:.1em;color:var(--faint);margin-bottom:2px}
+.meta b{display:block;font-size:13.5px;color:var(--ink);font-weight:700;line-height:1.45}
+
+/* ---------- pills ---------- */
+.pills-wrap{position:sticky;top:var(--nav);z-index:55;background:rgba(255,253,249,.96);border-bottom:1px solid var(--hair);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.pills{max-width:1180px;margin:0 auto;display:flex;gap:8px;padding:10px 20px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.pills::-webkit-scrollbar{display:none}
+.pill{flex:0 0 auto;min-width:92px;border:1px solid var(--hair2);background:#fff;border-radius:12px;padding:7px 12px 6px;
+  text-align:left;cursor:pointer;line-height:1.25;transition:transform .15s ease,box-shadow .15s ease,border-color .15s}
+.pill b{display:block;font-size:12.5px;color:var(--ink);font-weight:800;letter-spacing:.02em}
+.pill small{display:block;font-size:10.5px;color:var(--muted);margin-top:1px}
+.pill .pw{display:flex;align-items:center;gap:3px;font-size:10.5px;color:var(--muted);margin-top:3px}
+.pill[aria-selected="true"]{background:var(--dc,#EE6C4D);border-color:var(--dc,#EE6C4D);box-shadow:0 4px 14px rgba(0,0,0,.10)}
+.pill[aria-selected="true"] b,.pill[aria-selected="true"] small,.pill[aria-selected="true"] .pw{color:#fff}
+.pill:active{transform:scale(.97)}
+
+/* ---------- shell ---------- */
+.shell{max-width:1180px;margin:0 auto;padding:24px 20px 60px;display:grid;grid-template-columns:minmax(0,1fr) 452px;gap:34px;align-items:start}
+.col-map{position:sticky;top:calc(var(--nav) + 74px);height:calc(100vh - var(--nav) - 100px);max-height:730px;min-height:420px}
+
+/* ---------- day section ---------- */
+.day{margin-bottom:34px}
+.day[hidden]{display:none}
+.day-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 10px;margin-bottom:4px}
+.day-head h2{margin:0;font-size:16px;font-weight:800;color:var(--ink);display:flex;align-items:center;gap:8px;letter-spacing:.01em}
+.day-head h2 .dot{width:9px;height:9px;border-radius:50%;background:var(--dc);flex:0 0 auto}
+.day-head .sub{font-size:12.5px;color:var(--muted)}
+.rule{height:1px;background:var(--hair);margin:9px 0 14px}
+
+.wx{display:flex;align-items:center;gap:12px;background:var(--ds);border:1px solid rgba(0,0,0,.045);border-radius:14px;padding:10px 13px;margin-bottom:14px}
+.wx .ic{width:40px;height:40px;flex:0 0 auto}
+.wx .ic svg{width:100%;height:100%;display:block}
+.wx .t1{font-size:13px;color:var(--body);line-height:1.45}
+.wx .t1 b{color:var(--ink);font-weight:800}
+.wx .t2{font-size:11px;color:var(--muted);margin-top:2px}
+.wx .tp{margin-left:auto;text-align:right;flex:0 0 auto}
+.wx .hh{font-size:17px;font-weight:800;color:var(--ink);line-height:1.1}
+.wx .ll{font-size:10.5px;color:var(--muted)}
+
+.dek{margin:0 0 10px;font-size:13.5px;color:var(--body)}
+.note{margin:0 0 14px;font-size:12.5px;color:var(--muted);background:var(--soft);border-left:2px solid var(--dc);border-radius:0 8px 8px 0;padding:8px 12px}
+.note b{color:var(--ink)}
+
+.outfit{margin:0 0 16px;border:1px solid var(--hair);border-radius:12px;padding:9px 12px;background:#fff}
+.outfit .lab{font-size:10px;letter-spacing:.14em;color:var(--faint);margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--body);background:var(--paper);border-radius:999px;padding:3px 9px 3px 4px}
+.chip i{width:13px;height:13px;border-radius:50%;display:block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.07)}
+.outfit p{margin:7px 0 0;font-size:11.5px;color:var(--muted);line-height:1.55}
+
+/* ---------- cards ---------- */
+.cards{list-style:none;margin:0;padding:0}
+.card{display:grid;grid-template-columns:56px minmax(0,1fr);gap:13px;background:#fff;border:1px solid var(--hair);
+  border-radius:15px;padding:13px;margin-bottom:10px;transition:box-shadow .18s ease,border-color .18s ease,transform .18s ease}
+.card.active{border-color:var(--dc);box-shadow:0 6px 20px rgba(30,26,22,.09)}
+.card .thumb{width:56px;height:56px;border-radius:11px;display:grid;place-items:center;font-weight:800;font-size:16px;
+  background:var(--dt);color:var(--dc);letter-spacing:.02em}
+.card h3{margin:0;font-size:15px;font-weight:700;color:var(--ink);line-height:1.45;display:flex;gap:6px;align-items:baseline}
+.card h3 .ico{font-size:14px;line-height:1}
+.card .mline{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:5px 0 0;font-size:11.5px;color:var(--muted)}
+.card .mline b{color:var(--ink);font-weight:800;letter-spacing:.02em;font-size:12px}
+.leg{display:inline-flex;align-items:center;gap:3px;border-radius:999px;padding:1px 7px 1px 5px;font-size:10.5px;font-weight:600}
+.leg.drive{background:#F1EEE9;color:#6C6459}
+.leg.ride{background:#EAF3EC;color:#4C7A5B}
+.leg.walk{background:#EEF2F6;color:#5A7286}
+.card .nt{margin:6px 0 0;font-size:12.5px;color:var(--muted);line-height:1.6}
+.card .foot{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-top:9px}
+.card .price{font-size:11px;font-weight:700;color:var(--dc);background:var(--dt);border-radius:7px;padding:2px 8px}
+.card .link{font-size:11.5px;color:var(--muted);border:1px solid var(--hair2);border-radius:999px;padding:2px 10px;background:#fff}
+.card .link:active{background:var(--soft)}
+
+/* ---------- map ---------- */
+.mapbox{position:relative;height:100%;border:1px solid var(--hair);border-radius:20px;overflow:hidden;background:#EEF4F7;
+  box-shadow:0 10px 30px rgba(30,26,22,.06)}
+.mapwrap{position:absolute;inset:0}
+#map{width:100%;height:100%;display:block;touch-action:pan-y}
+.mapbtns{position:absolute;right:12px;top:12px;display:flex;flex-direction:column;gap:6px}
+.mapbtns button{width:32px;height:32px;border-radius:9px;border:1px solid var(--hair2);background:rgba(255,255,255,.94);
+  color:var(--ink);font-size:17px;line-height:1;cursor:pointer;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.mini{position:absolute;left:12px;bottom:12px;right:100px;max-width:300px;background:rgba(255,255,255,.95);border:1px solid var(--hair);
+  border-radius:13px;padding:9px 12px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.mini .t{font-size:10.5px;letter-spacing:.08em;color:var(--mc,#EE6C4D);font-weight:800}
+.mini .n{font-size:12.5px;color:var(--ink);font-weight:700;margin-top:2px;line-height:1.4}
+.mini .lg{font-size:10px;color:var(--faint);margin-top:5px}
+.collapse{position:absolute;left:12px;top:12px;border:1px solid var(--hair2);background:rgba(255,255,255,.94);
+  border-radius:999px;padding:5px 12px;font-size:11.5px;color:var(--body);cursor:pointer;display:none}
+.maptag{position:absolute;right:12px;bottom:12px;font-size:9.5px;color:#8A9AA6;background:rgba(255,255,255,.8);
+  border-radius:6px;padding:2px 6px}
+
+/* ---------- notes ---------- */
+.notes{border-top:1px solid var(--hair);padding-top:22px;margin-top:8px}
+.notes h4{margin:16px 0 6px;font-size:12px;letter-spacing:.1em;color:var(--ink)}
+.notes p{margin:0;font-size:12px;color:var(--muted);line-height:1.75}
+.notes ul{margin:0;padding-left:16px;font-size:12px;color:var(--muted);line-height:1.9}
+.notes a{border-bottom:1px solid var(--hair2);color:var(--body)}
+.sign{margin-top:22px;font-size:11px;color:var(--faint);text-align:center;letter-spacing:.06em}
+
+/* ---------- mobile ---------- */
+@media (max-width:980px){
+  :root{--nav:52px}
+  .hero{padding:22px 16px 18px}
+  .hero h1{font-size:25px}
+  .shell{grid-template-columns:minmax(0,1fr);gap:20px;padding:16px 16px 48px}
+  .col-map{position:sticky;top:calc(var(--nav) + 56px);z-index:40;height:212px;min-height:0;max-height:none;
+    order:-1;margin:-4px 0 4px}
+  .col-map.mini{height:116px}
+  .collapse{display:block}
+  .mini{right:12px;max-width:none;padding:7px 10px}
+  .mini .lg{display:none}
+  .pills{padding:8px 16px}
+  .pill{min-width:78px;padding:6px 10px 5px}
+  .card{grid-template-columns:48px minmax(0,1fr);gap:11px;padding:11px}
+  .card .thumb{width:48px;height:48px;font-size:14.5px}
+  .card h3{font-size:14px}
+  .meta>div{flex:1 1 100%}
+  .wx{flex-wrap:wrap}
+  .wx .tp{margin-left:auto}
+}
+@media (max-width:380px){
+  .hero h1{font-size:22px}
+}
+
+  .mapwrap{background-color:#FDF9F3;background-image:radial-gradient(#E9E1D2 1.1px, transparent 1.1px);background-size:16px 16px}
+  .mapbox{background:#FDF9F3}
+  #map text{user-select:none}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="brand">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.1c1.02 0 1.83.71 2.32 1.85.5 1.16 1.5 3.6 2.6 6.1 1.1 2.5 1.71 3.92 1.71 5.07 0 1.92-1.52 3.43-3.42 3.43-1.16 0-2.22-.61-3.21-1.83-1 1.22-2.06 1.83-3.22 1.83-1.9 0-3.42-1.51-3.42-3.43 0-1.15.61-2.57 1.71-5.07 1.1-2.5 2.1-4.94 2.6-6.1C10.17 3.81 10.98 3.1 12 3.1Zm0 4.28c-.72 1.63-1.5 3.4-2.13 4.87-.9 2.05-1.4 3.24-1.4 4.02 0 .94.73 1.68 1.66 1.68.62 0 1.25-.38 1.87-1.13.62.75 1.25 1.13 1.87 1.13.93 0 1.66-.74 1.66-1.68 0-.78-.5-1.97-1.4-4.02-.63-1.47-1.41-3.24-2.13-4.87Z"/></svg>
+    <span>巴厘岛四日</span>
+  </div>
+  <div class="day-tag">11/27 – 11/30</div>
+</header>
+
+<section class="hero">
+  <div class="hero-in">
+    <p class="eyebrow">SEMINYAK · UBUD · ULUWATU</p>
+    <h1>四天三晚，从水明漾出发</h1>
+    <p class="lede">四人两对，住水明漾别墅；一天泡在海边，一天上乌布山里，一天去乌鲁瓦图看日落，最后一天收尾返程。</p>
+    <div class="meta">
+      <div><span>住址</span><b>Lavish Villa Wahah · 水明漾</b></div>
+      <div><span>入住 / 退房</span><b>11/27 14:00 · 11/30 11:00</b></div>
+      <div><span>航班</span><b>11/27 落地 07:35 · 11/30 起飞 17:30</b></div>
+    </div>
+  </div>
+</section>
+
+<div class="pills-wrap"><nav class="pills" id="pills" role="tablist" aria-label="日程切换"></nav></div>
+
+<main class="shell">
+  <div id="list"></div>
+
+  <aside class="col-map" id="colMap">
+    <div class="mapbox">
+      <div class="mapwrap"><svg id="map" role="img" aria-label="行程示意地图"></svg></div>
+      <div class="mapbtns">
+        <button type="button" id="zIn" aria-label="放大">+</button>
+        <button type="button" id="zOut" aria-label="缩小">−</button>
+      </div>
+      <button class="collapse" id="collapse" type="button">收起地图</button>
+      <div class="mini" id="mini">
+        <div class="t" id="miniT">—</div>
+        <div class="n" id="miniN">—</div>
+        <div class="lg">实线 车 · 短划 摩托 · 点线 步行 · 示意地图，非导航</div>
+      </div>
+      <div class="maptag">示意图 · 按真实经纬度排布</div>
+    </div>
+  </aside>
+</main>
+
+<footer class="notes-shell" style="max-width:1180px;margin:0 auto;padding:0 20px 40px">
+  <div class="notes">
+    <h4>天气口径</h4>
+    <p>页面上的天气是巴厘岛水明漾（-8.68, 115.16）2024、2025 年 11/27–11/30 的同期实测，取自 Open-Meteo 历史再分析数据，取整到度、不是实时预报。11 月底已进雨季，多是午后到夜里的短时阵雨，出门前 3 天再看实时预报更准。</p>
+    <h4>交通口径</h4>
+    <p>「路程与交通」是从上一站到本站。打车价是 Grab/Gojek 平日估价（4 人一车），雨天与晚高峰上浮 20–40%，以 App 实时为准；骑摩托指自己租的车，只算油钱约 IDR 500/km。乌布与乌鲁瓦图山路、夜归都建议打车。</p>
+    <h4>预订与联系</h4>
+    <ul>
+      <li>上门按摩 90 分钟 · <a href="https://www.airbnb.cn/s/水明漾/services?refinement_paths[]=/services&amp;service_type_tag=Tag:8942&amp;checkin=2026-11-27&amp;checkout=2026-11-30&amp;center_lat=-8.6828&amp;center_lng=115.1602&amp;location_search=NEARBY_STAY" target="_blank" rel="noopener">Airbnb 服务页</a></li>
+      <li>ATV 丛林体验 · <a href="https://www.airbnb.com/experiences/4717679" target="_blank" rel="noopener">体验 4717679</a></li>
+      <li>冲浪 Odysseys · <a href="https://www.odysseysurfschool.com/" target="_blank" rel="noopener">官网预约</a></li>
+      <li>Hujan Locale · <a href="tel:+6281353260275">+62 813-5326-0275</a></li>
+      <li>RENTIFY 租摩托 · <a href="tel:+6285944004747">+62 859-4400-4747</a></li>
+      <li>Emily Spa 四人同做 · 提前一天电话</li>
+    </ul>
+    <h4>读法</h4>
+    <p>左边每张卡片是一个点位，点一下（或滚动到这里），右边地图会移过去并高亮这一站；卡片之间的那条线就是这段路，旁边的胶囊写着车程与花费。每张卡片的「位置」直接打开地图导航，需要预约的项目另有「预订」或电话。</p>
+  </div>
+  <div class="sign">2026 / 11 / 27 – 11 / 30 · 巴厘岛</div>
+</footer>
+
+<script>
+var DATA = {"DAYS":[{"id":1,"color":"#EE6C4D","soft":"#FFF0EA","day":"Day One · 11/27 · 周五","title":"落地、汇合与一顿慢午餐","dek":"第 4 人 12:30 落地、14:00 前后到别墅，正好赶上办入住；三人先回别墅歇脚，午餐顺到 14:20，按摩仍是 16:00。","note":"","outfit":{"tip":"机场到泳池是同一套：亚麻衬衫内搭泳衣，傍晚去寺庙外披一件薄罩衫，日落 18:20 海风偏凉。","chips":[{"c":"#E7DCCB","n":"亚麻衬衫"},{"c":"#C6D2D2","n":"海雾蓝泳衣"},{"c":"#B6A48E","n":"草编包与凉拖"}]},"stops":[{"t":"07:35","lat":-8.7467,"lon":115.1668,"name":"落地登巴萨 DPS（三人）","note":"出关取行李按 45 分钟算，登机前先办好 e-CD 海关申报码。","price":"","maps":"","book":{"label":"海关申报","url":"https://ecd.beacukai.go.id/"}},{"t":"08:50","lat":-8.6808,"lon":115.1633,"name":"打车去别墅","note":"到达厅 3 号门是 Grab 上车点，行李多就别骑摩托。","price":"车资 ¥55–92","leg":{"m":"drive","text":"车 30–45 分钟 · Grab/Gojek ¥55–92（四人一车）"},"maps":""},{"t":"09:20","lat":-8.6808,"lon":115.1633,"name":"到别墅寄存行李","note":"14:00 才正式入住，箱子先放管家处。","price":"","leg":{"m":"walk","text":"含上一段"},"maps":"https://www.google.com/maps/search/?api=1&query=Lavish Villa Wahah Jalan Mertasari Seminyak"},{"t":"09:40","lat":-8.6835,"lon":115.165,"name":"Milk & Madu 慢早餐","note":"4.8 分（1,475 条），07:00 开门。","price":"4 人 ¥147–220 · 人均 ¥37–55","leg":{"m":"walk","text":"步行 5 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Milk & Madu Jl. Raya Seminyak No.56"},{"t":"10:45","lat":-8.6847,"lon":115.1587,"name":"租摩托车 RENTIFY Seminyak","note":"Jl. Plawa 46，5.0 分（121 条），含 2 顶头盔，押金 IDR 500k（¥183）；只租自动挡，出发前拍一圈车身。","price":"¥29–44 / 台·日","leg":{"m":"walk","text":"步行 8 分钟（约 1.2 km）"},"maps":"https://www.google.com/maps/search/?api=1&query=Motorbike and Scooter Rental RENTIFY Seminyak"},{"t":"11:20","lat":-8.6836,"lon":115.161,"name":"Eat Street ＋ Seminyak Village","note":"BAKED.、baby revs 买豆、republic of soap。","price":"","leg":{"m":"ride","text":"摩托 3 分钟 / 步行 10 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=baby revs Seminyak"},{"t":"12:30","lat":-8.7467,"lon":115.1668,"name":"第 4 人落地 DPS","note":"不用接机；落地在群里说一声，航班晚点就顺推午餐。出关约 45 分钟、13:15 上车。","price":"车资 ¥55–92","leg":{"m":"drive","text":"他自己叫 Grab：车 30–45 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Bandar Udara Internasional Ngurah Rai"},{"t":"13:15","lat":-8.6808,"lon":115.1633,"name":"三人回别墅歇脚、换泳衣","note":"行李还在管家处，14:00 一起办入住。","price":"","leg":{"m":"walk","text":"步行 8 分钟 / 摩托 3 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Lavish Villa Wahah Jalan Mertasari Seminyak"},{"t":"14:00","lat":-8.6808,"lon":115.1633,"name":"入住（管家办手续）","note":"第 4 人同一时间到，4 人一起登记，两卧钥匙。","price":"","leg":{"m":"walk","text":"别墅内"},"maps":"https://www.google.com/maps/search/?api=1&query=Lavish Villa Wahah Jalan Mertasari Seminyak"},{"t":"14:20","lat":-8.6776,"lon":115.1584,"name":"午餐 Biku（Petitenget）","note":"4.6 分（5,906 条），印尼菜正餐强；他晚到就先点、给他留单。","price":"人均 ¥37–66","leg":{"m":"walk","text":"步行 6 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Biku Seminyak"},{"t":"16:00","lat":-8.6808,"lon":115.1633,"name":"上门按摩 90 分钟","note":"4 位技师 16:00–17:30；出发前再跟服务方确认一次时间。","price":"¥132 / 90 分钟","leg":{"m":"walk","text":"步行 6 分钟回别墅"},"maps":"https://www.google.com/maps/search/?api=1&query=Lavish Villa Wahah Jalan Mertasari Seminyak","book":{"label":"预订","url":"https://www.airbnb.cn/s/水明漾/services?refinement_paths[]=/services&service_type_tag=Tag:8942&checkin=2026-11-27&checkout=2026-11-30&center_lat=-8.6828&center_lng=115.1602&location_search=NEARBY_STAY"}},{"t":"17:45","lat":-8.6816,"lon":115.1533,"name":"Pura Petitenget ＋ 海滩日落","note":"寺里要围纱笼，日落约 18:20。","price":"","leg":{"m":"walk","text":"步行 10 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Pura Petitenget (Dang Kahyangan Jagat)"},{"t":"19:15","lat":-8.6772,"lon":115.1602,"name":"Merah Putih 晚餐","note":"4.5 分（3,098 条），现代印尼菜，提前一天订位。","price":"人均 ¥92–147","leg":{"m":"ride","text":"摩托 5 分钟 / 步行 18 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Merah Putih Seminyak"},{"t":"21:00","lat":-8.6838,"lon":115.1637,"name":"La Favela 小酌","note":"4.4 分，庭院酒吧，10 点后才热闹。","price":"人均 ¥55–92","leg":{"m":"walk","text":"步行 7 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=La Favela Seminyak"}]},{"id":2,"color":"#2F9E7A","soft":"#E7F6F0","day":"Day Two · 11/28 · 周六","title":"乌布一日：丛林、梯田与夜市","dek":"往返约 130 km，乌布山路加夜归，这天建议打车或包车，别全程骑摩托。","note":"<b>三种走法<\/b>：包车 10 小时 IDR 700–900k（¥256–330）最划算，ATV、梯田、夜市都能等；分段叫 Grab 合计 IDR 1,000–1,300k（¥366–476）；两台摩托只花油钱约 IDR 60k（¥22），但雨天山路＋夜路不安全。","outfit":{"tip":"ATV 会溅泥，上衣选深色可洗的速干料；梯田走的多是土路和石阶，鞋别穿白的，带一件干净 T 恤换。","chips":[{"c":"#4F5B4A","n":"深橄榄速干上衣"},{"c":"#8A8578","n":"耐磨旧球鞋"},{"c":"#D9CFC0","n":"备用干净 T 恤"}]},"stops":[{"t":"08:00","lat":-8.6788,"lon":115.1588,"name":"nüde Cafe Seminyak 早餐","note":"4.9 分（949 条）；三家同名店选 Seminyak（另两家在 Berawa、Umalas）。","price":"人均 ¥29–48","leg":{"m":"walk","text":"步行 8 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=nüde Cafe Seminyak"},{"t":"10:30","lat":-8.42,"lon":115.26,"name":"ATV 四驱丛林（Airbnb 体验 4717679）","note":"★4.91（1,018 条），3.5 小时含 Cretya 午餐与泳池。","price":"¥220 / 人 起","leg":{"m":"drive","text":"车 75–90 分钟 · ¥110–147 ｜ 摩托 70–85 分钟（油钱约 ¥11）"},"maps":"https://www.google.com/maps/search/?api=1&query=Cretya Ubud","book":{"label":"预订","url":"https://www.airbnb.com/experiences/4717679"}},{"t":"13:00","lat":-8.508,"lon":115.263,"name":"乌布午餐 warung","note":"简单吃，接下去还要跑梯田。","price":"人均 ¥29","leg":{"m":"drive","text":"车 20–25 分钟 · ¥29–44 ｜ 摩托 15–20 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=warung Ubud center"},{"t":"14:30","lat":-8.4312,"lon":115.2789,"name":"Tegalalang 梯田","note":"门票 IDR 50k（¥18），15:00 光线最好；不赶可加圣泉寺 30 分钟。","price":"门票 ¥18","leg":{"m":"drive","text":"车 20 分钟 · ¥29–44 ｜ 摩托 15–20 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Tegalalang Rice Terrace"},{"t":"16:00","lat":-8.5072,"lon":115.2632,"name":"Seniman Coffee","note":"4.6 分，坐半小时买豆。梯田到这里 8.5 km。","price":"人均 ¥18","leg":{"m":"drive","text":"车 25–30 分钟 · ¥37–55 ｜ 摩托 20–25 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Seniman Coffee Ubud"},{"t":"17:00","lat":-8.5069,"lon":115.2625,"name":"Pasar Seni 乌布市集","note":"开价从 6 折砍，现金更好谈；地图上叫 Ubud Art Market。","price":"","leg":{"m":"walk","text":"步行 3 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Pasar Seni Ubud"},{"t":"18:00","lat":-8.5071,"lon":115.2648,"name":"Hujan Locale 晚餐","note":"4.5 分（1,693 条），老宅现代印尼菜，需预约。","price":"人均 ¥92–147","leg":{"m":"walk","text":"步行 6 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Hujan Locale Ubud","book":{"label":"电话预订","url":"tel:+6281353260275"}},{"t":"19:15","lat":-8.5065,"lon":115.2625,"name":"Night Rooster 喝一杯","note":"Jl. Goutama Sel. No.5（乌布中心），40 座小酒吧，安静不吵，建议预约。","price":"人均 ¥55–92","leg":{"m":"walk","text":"步行 5 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Night Rooster Ubud"},{"t":"20:00","lat":-8.5035,"lon":115.2483,"name":"Sayan 夜市","note":"18:00–23:00，带 IDR 10k/20k/50k 小钞。","price":"小吃 ¥5–18 / 份","leg":{"m":"drive","text":"车 12–15 分钟 · ¥22–29 ｜ 摩托 10 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Sayan Night Market Ubud"},{"t":"20:45","lat":-8.6808,"lon":115.1633,"name":"回水明漾","note":"22:15 到，回来正好泳池夜游。","price":"车资 ¥165–220","leg":{"m":"drive","text":"车 85–100 分钟 · ¥165–220；夜路不骑摩托"},"maps":"https://www.google.com/maps/search/?api=1&query=Lavish Villa Wahah Jalan Mertasari Seminyak"}]},{"id":3,"color":"#3B87CD","soft":"#E9F3FC","day":"Day Three · 11/29 · 周日","title":"冲浪、按摩与乌鲁瓦图的日落","dek":"库塔 → 苍古 → 乌鲁瓦图南线，全天靠车，摩托只作短驳。","note":"","outfit":{"tip":"冲浪穿泳衣，寺庙要围纱笼遮腿（现场可租）；乌鲁瓦图崖上风大，薄外套塞包里。","chips":[{"c":"#E4D7C4","n":"泳衣＋速干短裤"},{"c":"#9BA8A0","n":"海灰罩衫"},{"c":"#A98E77","n":"寺庙纱笼"}]},"stops":[{"t":"08:00","lat":-8.7145,"lon":115.1685,"name":"Odysseys Surf School 冲浪 2 小时","note":"4.9 分（419 条），1 教练带 4 人，含板、防磨衣、保险；课前 15 分钟到店。","price":"¥167 / 人","leg":{"m":"drive","text":"07:15 出发：车 20–25 分钟 · ¥29–44 ｜ 摩托 15–18 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Odysseys Surf School Kuta","book":{"label":"预订","url":"https://www.odysseysurfschool.com/"}},{"t":"10:15","lat":-8.718,"lon":115.169,"name":"Emily Spa 按摩 60 分钟","note":"Jl. Pantai Kuta 41，4.9 分（2,357 条），可 walk-in；四人同做提前一天电话说一声。","price":"¥55 / 60 分钟 · ¥81 / 90 分钟","leg":{"m":"walk","text":"步行 3 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Emily Spa Pantai Kuta"},{"t":"12:15","lat":-8.6505,"lon":115.1315,"name":"La Brisa 周日市集 ＋ 海边早午餐","note":"4.6 分（23,721 条），周日 10:00–16:00、免费入场。","price":"人均 ¥55–92","leg":{"m":"drive","text":"11:30 出发：车 40–55 分钟 · ¥66–92 ｜ 摩托 35–45 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=La Brisa Bali"},{"t":"15:00","lat":-8.848,"lon":115.1878,"name":"Pandawa 海滩","note":"门票 IDR 15k（¥5），崖壁白沙滩拍照 20 分钟。","price":"门票 ¥5","leg":{"m":"drive","text":"13:30 出发：车 75–90 分钟 · ¥128–165（山路不建议摩托）"},"maps":"https://www.google.com/maps/search/?api=1&query=Pandawa Beach"},{"t":"16:00","lat":-8.8065,"lon":115.1065,"name":"Dang! Cookies Uluwatu（Bingin）","note":"4.8 分（324 条），现烤曲奇，营业到 23:00。","price":"¥9–15 / 块","leg":{"m":"drive","text":"车 25–30 分钟 · ¥37–51 ｜ 摩托 20 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Dang Cookies Uluwatu"},{"t":"17:00","lat":-8.8291,"lon":115.0849,"name":"Uluwatu 寺 ＋ Kecak 日落","note":"Kecak 18:00–19:00；围纱笼，注意猴子。","price":"门票 ¥18 ＋ Kecak ¥55","leg":{"m":"drive","text":"车 20–25 分钟 · ¥33–48 ｜ 摩托 15–18 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Pura Luhur Uluwatu"},{"t":"19:30","lat":-8.79,"lon":115.176,"name":"Warung Mak Jo 晚餐（金巴兰）","note":"Jl. Raya Uluwatu（GWK 前 300 米），本地 warung，翻台快，正好在回程路上。","price":"人均 ¥18–29","leg":{"m":"drive","text":"看完 Kecak 出发：车 25–30 分钟 · ¥33–48"},"maps":"https://www.google.com/maps/search/?api=1&query=Warung Mak Jo Uluwatu"},{"t":"20:45","lat":-8.6808,"lon":115.1633,"name":"回水明漾","note":"21:45 前到；想再喝一杯就去 Ku De Ta（人均 ¥73–110）。","price":"车资 ¥92–128","leg":{"m":"drive","text":"车 45–60 分钟 · ¥92–128；夜路不骑摩托"},"maps":"https://www.google.com/maps/search/?api=1&query=Ku De Ta Seminyak"}]},{"id":4,"color":"#C98A1E","soft":"#FBF2DE","day":"Day Four · 11/30 · 周一","title":"收尾、还车与返程","dek":"11:00 退房、10:15 还车；13:45 从别墅出发，15:00 到机场，17:30 起飞。","note":"","outfit":{"tip":"返程以宽松凉快为主，机上空调冷，薄针织塞随身包。","chips":[{"c":"#F0EAE0","n":"白棉 T"},{"c":"#B7C0C4","n":"雾蓝宽裤"},{"c":"#7E776D","n":"机上薄针织"}]},"stops":[{"t":"07:45","lat":-8.6808,"lon":115.1633,"name":"起床打包","note":"退房 11:00，先把箱子收好。","price":"","leg":{"m":"walk","text":"别墅内"},"maps":"https://www.google.com/maps/search/?api=1&query=Lavish Villa Wahah Jalan Mertasari Seminyak"},{"t":"08:30","lat":-8.6845,"lon":115.162,"name":"Sisterfields 早午餐","note":"4.8 分（18,480 条），8:30 到不用排队。","price":"人均 ¥44–73","leg":{"m":"walk","text":"步行 5 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Sisterfields Seminyak"},{"t":"09:45","lat":-8.6808,"lon":115.1633,"name":"回别墅退房、行李寄存","note":"提前跟管家说一声，放前台。","price":"","leg":{"m":"walk","text":"步行 5 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Lavish Villa Wahah Jalan Mertasari Seminyak"},{"t":"10:15","lat":-8.6847,"lon":115.1587,"name":"还摩托车 RENTIFY ＋ 泡泳池","note":"还车前加满油约 IDR 20k（¥7），头盔和钥匙一起交回。","price":"加油 ¥7","leg":{"m":"walk","text":"步行 8 分钟（或骑过去 3 分钟）"},"maps":"https://www.google.com/maps/search/?api=1&query=Motorbike and Scooter Rental RENTIFY Seminyak"},{"t":"12:15","lat":-8.6795,"lon":115.1575,"name":"Bonito 午餐 ＋ 补伴手礼","note":"12:45 前吃完，留出取行李的时间。","price":"人均 ¥55–92","leg":{"m":"ride","text":"摩托 5 分钟 / 步行 15 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Bonito Fish Bar Seminyak"},{"t":"13:30","lat":-8.6808,"lon":115.1633,"name":"回别墅取行李","note":"行李在前台，取完直接上车。","price":"","leg":{"m":"walk","text":"步行 10 分钟"},"maps":"https://www.google.com/maps/search/?api=1&query=Lavish Villa Wahah Jalan Mertasari Seminyak"},{"t":"13:45","lat":-8.6808,"lon":115.1633,"name":"出发去机场","note":"周一堵，留足余量。","price":"车资 ¥55–92","leg":{"m":"drive","text":"车 30–45 分钟 · Grab/Gojek ¥55–92"},"maps":"https://www.google.com/maps/search/?api=1&query=Bandar Udara Internasional Ngurah Rai"},{"t":"15:00","lat":-8.7467,"lon":115.1668,"name":"DPS 机场","note":"国际航班提前 2.5 小时，17:30 起飞。","price":"","leg":{"m":"drive","text":"含上一段"},"maps":"https://www.google.com/maps/search/?api=1&query=Bandar Udara Internasional Ngurah Rai"}]}],"VILLA":{"lat":-8.6808,"lon":115.1633,"name":"Lavish Villa Wahah"},"WEATHER":{"1":{"date":"11/27 周五","icon":"rain","hi":30,"lo":25,"cond":"阵雨，午后到夜里","rain":"4–10 mm","tip":"雨季湿度高，带把折伞"},"2":{"date":"11/28 周六","icon":"suncloud","hi":30,"lo":25,"cond":"多云间晴，零星阵雨","rain":"2–6 mm","tip":"上乌布山路，雨来得快"},"3":{"date":"11/29 周日","icon":"rain","hi":29,"lo":24,"cond":"阵雨转多云","rain":"1–11 mm","tip":"海边风大，冲浪后换干衣"},"4":{"date":"11/30 周一","icon":"cloud","hi":29,"lo":25,"cond":"阴到多云，闷热","rain":"0–19 mm","tip":"返程日留意午后雷阵雨"}},"WXSvg":{"sun":"<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><g stroke=\"#FFC85C\" stroke-width=\"2.6\" stroke-linecap=\"round\"><line x1=\"24\" y1=\"10.5\" x2=\"24\" y2=\"5.8\"/><line x1=\"24\" y1=\"37.5\" x2=\"24\" y2=\"42.2\"/><line x1=\"10.5\" y1=\"24\" x2=\"5.8\" y2=\"24\"/><line x1=\"37.5\" y1=\"24\" x2=\"42.2\" y2=\"24\"/><line x1=\"33.9\" y1=\"14.1\" x2=\"37.1\" y2=\"10.9\"/><line x1=\"33.9\" y1=\"33.9\" x2=\"37.1\" y2=\"37.1\"/><line x1=\"14.1\" y1=\"33.9\" x2=\"10.9\" y2=\"37.1\"/><line x1=\"14.1\" y1=\"14.1\" x2=\"10.9\" y2=\"10.9\"/><\/g><circle cx=\"24\" cy=\"24\" r=\"10\" fill=\"#FFD473\"/><circle cx=\"20.6\" cy=\"22.4\" r=\"1.5\" fill=\"#8A6412\"/><circle cx=\"27.4\" cy=\"22.4\" r=\"1.5\" fill=\"#8A6412\"/><path d=\"M21 26.6c1.7 1.7 4.3 1.7 6 0\" stroke=\"#8A6412\" stroke-width=\"1.6\" fill=\"none\" stroke-linecap=\"round\"/><\/svg>","suncloud":"<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><g stroke=\"#FFC85C\" stroke-width=\"2.2\" stroke-linecap=\"round\"><line x1=\"18\" y1=\"7.6\" x2=\"18\" y2=\"4.2\"/><line x1=\"9.6\" y1=\"17\" x2=\"6.2\" y2=\"17\"/><line x1=\"12\" y1=\"11\" x2=\"9.6\" y2=\"8.6\"/><\/g><circle cx=\"18\" cy=\"17\" r=\"7\" fill=\"#FFD473\"/><g fill=\"#DCECF9\"><circle cx=\"21\" cy=\"28\" r=\"7\"/><circle cx=\"29\" cy=\"26\" r=\"8.5\"/><rect x=\"13.5\" y=\"28\" width=\"24\" height=\"9\" rx=\"4.5\"/><\/g><circle cx=\"21\" cy=\"30.2\" r=\"1.3\" fill=\"#5C7F9C\"/><circle cx=\"28\" cy=\"30.2\" r=\"1.3\" fill=\"#5C7F9C\"/><path d=\"M22 33c1.3 1.3 3.3 1.3 4.6 0\" stroke=\"#5C7F9C\" stroke-width=\"1.4\" fill=\"none\" stroke-linecap=\"round\"/><\/svg>","cloud":"<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><g fill=\"#E6EBF1\"><circle cx=\"19\" cy=\"22\" r=\"7.5\"/><circle cx=\"28\" cy=\"19.5\" r=\"8.5\"/><rect x=\"11.5\" y=\"22.5\" width=\"25\" height=\"9\" rx=\"4.5\"/><\/g><circle cx=\"21\" cy=\"24.6\" r=\"1.3\" fill=\"#7A8798\"/><circle cx=\"28\" cy=\"24.6\" r=\"1.3\" fill=\"#7A8798\"/><path d=\"M22 27.6c1.3 1.3 3.3 1.3 4.6 0\" stroke=\"#7A8798\" stroke-width=\"1.4\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M35 14.5c1.2 1.7 1.9 2.7 1.9 3.5a1.9 1.9 0 0 1-3.8 0c0-.8.7-1.8 1.9-3.5Z\" fill=\"#A8C6E4\"/><\/svg>","rain":"<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><g fill=\"#D7E7F6\"><circle cx=\"19\" cy=\"20\" r=\"7.5\"/><circle cx=\"28\" cy=\"17.5\" r=\"8.5\"/><rect x=\"11.5\" y=\"20.5\" width=\"25\" height=\"9\" rx=\"4.5\"/><\/g><circle cx=\"21\" cy=\"22.6\" r=\"1.3\" fill=\"#5C7F9C\"/><circle cx=\"28\" cy=\"22.6\" r=\"1.3\" fill=\"#5C7F9C\"/><path d=\"M22 25.4c1.3 1.3 3.3 1.3 4.6 0\" stroke=\"#5C7F9C\" stroke-width=\"1.4\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M18 32.6c1.5 1.9 2.3 3 2.3 3.9a2.3 2.3 0 0 1-4.6 0c0-.9.8-2 2.3-3.9Z\" fill=\"#7FB6E6\"/><path d=\"M24 34c1.5 1.9 2.3 3 2.3 3.9a2.3 2.3 0 0 1-4.6 0c0-.9.8-2 2.3-3.9Z\" fill=\"#9CC8EC\"/><path d=\"M30 32.6c1.5 1.9 2.3 3 2.3 3.9a2.3 2.3 0 0 1-4.6 0c0-.9.8-2 2.3-3.9Z\" fill=\"#7FB6E6\"/><\/svg>"}};
+</script>
+<script>
+(function(){
+  var DAYS = DATA.DAYS, VILLA = DATA.VILLA, WEATHER = DATA.WEATHER, WXS = DATA.WXSvg;
+  var MODE_NAME = { drive: "车", ride: "摩托", walk: "步行" };
+  var LEG_EMOJI = { drive: "🚗", ride: "🛵", walk: "🚶" };
+
+  var ICON_RULES = [
+    [/冲浪/, "🏄"], [/ATV|四驱/, "🏍"], [/滑翔伞/, "🪂"], [/按摩|Spa/i, "💆"],
+    [/曲奇|Cookies/i, "🍪"], [/咖啡|Coffee/i, "☕"], [/早午餐/, "🍳"], [/早餐/, "🥐"],
+    [/梯田/, "🌾"], [/夜市/, "🏮"], [/喝一杯|小酌|酒吧/, "🍸"], [/租摩托|还摩托|摩托车/, "🛵"],
+    [/出发去机场/, "🚗"], [/打车|回水明漾|去别墅/, "🚗"], [/打包|行李/, "🧳"], [/泳衣|泳池/, "🏊"],
+    [/寺|Pura|日落/, "🛕"], [/海滩/, "🏖"], [/入住|别墅|歇脚/, "🏡"], [/落地|机场|起飞/, "🛬"],
+    [/午餐|晚餐|warung/, "🍽"], [/市集|Village|逛街|伴手礼/, "🛍"]
+  ];
+  function iconFor(name){
+    for (var i = 0; i < ICON_RULES.length; i++) { if (ICON_RULES[i][0].test(name)) return ICON_RULES[i][1]; }
+    return "📍";
+  }
+  for (var di = 0; di < DAYS.length; di++) { DAYS[di].weather = WEATHER[DAYS[di].id]; }
+
+  function el(tag, cls, text){
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function rgba(hex, a){
+    var h = hex.replace("#", "");
+    var r = parseInt(h.slice(0,2),16), g = parseInt(h.slice(2,4),16), b = parseInt(h.slice(4,6),16);
+    return "rgba(" + r + "," + g + "," + b + "," + a + ")";
+  }
+  function dayLabel(d){
+    var p = d.day.split("·"); return "Day " + d.id + " · " + p[1].trim() + " " + p[2].trim();
+  }
+  function dayShort(d){
+    var p = d.day.split("·"); return p[1].trim();
+  }
+
+  /* ---------- pills ---------- */
+  var pillsEl = document.getElementById("pills");
+  function addPill(id, top, bottom, emoji, temp, color){
+    var b = el("button", "pill"); b.type = "button"; b.setAttribute("role", "tab");
+    b.setAttribute("data-day", id); b.style.setProperty("--dc", color);
+    b.setAttribute("aria-selected", "false");
+    b.appendChild(el("b", null, top));
+    b.appendChild(el("small", null, bottom));
+    if (emoji) {
+      var pw = el("span", "pw");
+      pw.appendChild(el("span", null, emoji));
+      pw.appendChild(el("span", null, temp));
+      b.appendChild(pw);
+    }
+    pillsEl.appendChild(b);
+    return b;
+  }
+  DAYS.forEach(function(d){
+    var w = d.weather, e = { rain: "🌧️", suncloud: "🌤️", cloud: "☁️", sun: "☀️" }[w.icon] || "🌤️";
+    addPill(String(d.id), "Day " + d.id, dayShort(d) + " " + w.hi + "°/" + w.lo + "°", e, "", d.color);
+  });
+  addPill("all", "全程", "四天串联", "🧭", "40 站", "#5B5B6B");
+
+  /* ---------- day sections ---------- */
+  var listEl = document.getElementById("list");
+  var allStops = [];
+
+  DAYS.forEach(function(day){
+    var sec = el("section", "day"); sec.setAttribute("data-day", String(day.id));
+    sec.style.setProperty("--dc", day.color);
+    sec.style.setProperty("--ds", day.soft);
+    sec.style.setProperty("--dt", rgba(day.color, .13));
+
+    var head = el("div", "day-head");
+    var h2 = el("h2"); h2.appendChild(el("span", "dot")); h2.appendChild(document.createTextNode(dayLabel(day)));
+    head.appendChild(h2); head.appendChild(el("span", "sub", day.title));
+    sec.appendChild(head);
+    sec.appendChild(el("div", "rule"));
+
+    var w = day.weather;
+    var wx = el("div", "wx");
+    var ic = el("div", "ic"); ic.innerHTML = WXS[w.icon] || WXS.suncloud; wx.appendChild(ic);
+    var mid = el("div", "wx-mid");
+    var t1 = el("div", "t1"); t1.innerHTML = "<b>" + w.date + "</b> · " + w.cond; mid.appendChild(t1);
+    mid.appendChild(el("div", "t2", "雨量 " + w.rain + " · " + w.tip + " · 历史同期参考"));
+    wx.appendChild(mid);
+    var tp = el("div", "tp");
+    tp.appendChild(el("div", "hh", w.hi + "°"));
+    tp.appendChild(el("div", "ll", "最低 " + w.lo + "°"));
+    wx.appendChild(tp);
+    sec.appendChild(wx);
+
+    if (day.dek) sec.appendChild(el("p", "dek", day.dek));
+    if (day.note) { var nt = el("p", "note"); nt.innerHTML = day.note; sec.appendChild(nt); }
+
+    var outfit = el("div", "outfit");
+    outfit.appendChild(el("div", "lab", "当天穿搭"));
+    var chips = el("div", "chips");
+    day.outfit.chips.forEach(function(c){
+      var chip = el("span", "chip");
+      var i = el("i"); i.style.background = c.c; chip.appendChild(i);
+      chip.appendChild(el("span", null, c.n));
+      chips.appendChild(chip);
+    });
+    outfit.appendChild(chips);
+    outfit.appendChild(el("p", null, day.outfit.tip));
+    sec.appendChild(outfit);
+
+    var ul = el("ul", "cards");
+    day.stops.forEach(function(s, idx){
+      var key = "d" + day.id + "s" + idx;
+      s.__key = key; s.__day = day; s.__idx = idx;
+      allStops.push(s);
+
+      var li = el("li", "card");
+      li.setAttribute("data-key", key);
+      li.style.setProperty("--dc", day.color);
+      li.style.setProperty("--dt", rgba(day.color, .13));
+      li.__stop = s;
+
+      li.appendChild(el("div", "thumb", ("0" + (idx + 1)).slice(-2)));
+
+      var body = el("div", "card-body");
+      var h3 = el("h3");
+      h3.appendChild(el("span", "ico", iconFor(s.name)));
+      h3.appendChild(document.createTextNode(s.name));
+      body.appendChild(h3);
+
+      var line = el("p", "mline");
+      line.appendChild(el("b", null, s.t));
+      if (s.leg) {
+        var m = s.leg.m || "drive";
+        var chip2 = el("span", "leg " + m);
+        chip2.appendChild(el("i", null, LEG_EMOJI[m] || "🚗"));
+        line.appendChild(chip2);
+        line.appendChild(document.createTextNode(s.leg.text));
+      }
+      body.appendChild(line);
+
+      if (s.note) body.appendChild(el("p", "nt", s.note));
+
+      var foot = el("div", "foot");
+      if (s.price) foot.appendChild(el("span", "price", s.price));
+      if (s.maps) {
+        var a = el("a", "link", "位置"); a.href = s.maps; a.target = "_blank"; a.rel = "noopener";
+        foot.appendChild(a);
+      }
+      if (s.book) {
+        var b2 = el("a", "link", s.book.label); b2.href = s.book.url; b2.target = "_blank"; b2.rel = "noopener";
+        foot.appendChild(b2);
+      }
+      if (foot.childNodes.length) body.appendChild(foot);
+      li.appendChild(body);
+
+      li.addEventListener("mouseenter", function(){ setActive(key, true); });
+      li.addEventListener("click", function(){ setActive(key, true); });
+      ul.appendChild(li);
+    });
+    sec.appendChild(ul);
+    listEl.appendChild(sec);
+  });
+
+  /* ---------- map ---------- */
+  var NS = "http://www.w3.org/2000/svg";
+  var svg = document.getElementById("map");
+  function mk(tag, attrs){
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs) { if (attrs.hasOwnProperty(k)) n.setAttribute(k, attrs[k]); }
+    return n;
+  }
+  var X0 = 115.04, Y0 = -8.39;
+  function px(lon){ return (lon - X0) * 109.9; }
+  function py(lat){ return (Y0 - lat) * 111.32; }
+  function P(lon, lat){ return [px(lon), py(lat)]; }
+
+  var gGeo = mk("g", {}), gRoute = mk("g", {}), gLab = mk("g", {}), gPins = mk("g", {});
+  svg.appendChild(gGeo); svg.appendChild(gRoute); svg.appendChild(gLab); svg.appendChild(gPins);
+
+  function smooth(pts){
+    if (!pts.length) return "";
+    var d = "M" + pts[0][0].toFixed(2) + " " + pts[0][1].toFixed(2);
+    for (var i = 0; i < pts.length - 1; i++) {
+      var p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+      var c1x = p1[0] + (p2[0] - p0[0]) / 6, c1y = p1[1] + (p2[1] - p0[1]) / 6;
+      var c2x = p2[0] - (p3[0] - p1[0]) / 6, c2y = p2[1] - (p3[1] - p1[1]) / 6;
+      d += "C" + c1x.toFixed(2) + " " + c1y.toFixed(2) + " " + c2x.toFixed(2) + " " + c2y.toFixed(2) + " " + p2[0].toFixed(2) + " " + p2[1].toFixed(2);
+    }
+    return d;
+  }
+
+  /* 南巴厘海岸线（示意）*/
+  var COAST = [
+    [114.930,-8.618],[115.000,-8.632],[115.050,-8.646],[115.090,-8.653],[115.125,-8.660],
+    [115.148,-8.671],[115.163,-8.686],[115.172,-8.703],[115.177,-8.723],[115.170,-8.744],
+    [115.166,-8.757],[115.152,-8.770],[115.128,-8.784],[115.106,-8.799],[115.090,-8.815],
+    [115.078,-8.833],[115.082,-8.847],[115.105,-8.855],[115.140,-8.859],[115.172,-8.853],
+    [115.196,-8.841],[115.207,-8.824],[115.214,-8.803],[115.221,-8.784],[115.233,-8.775],
+    [115.245,-8.760],[115.258,-8.745],[115.262,-8.720],[115.268,-8.702],[115.285,-8.678],
+    [115.310,-8.658],[115.345,-8.635],[115.400,-8.610]
+  ].map(function(p){ return P(p[0], p[1]); });
+
+  var seaPts = COAST.concat([[px(115.46), 130], [px(114.80), 130]]);
+  var seaD = smooth(seaPts) + " Z";
+
+  var defs = mk("defs", {});
+  var lg = mk("linearGradient", { id: "deep", x1: "0", y1: "0", x2: "0", y2: "1" });
+  lg.appendChild(mk("stop", { offset: "0%", "stop-color": "#E4F0F7", "stop-opacity": "1" }));
+  lg.appendChild(mk("stop", { offset: "60%", "stop-color": "#CDE3EF", "stop-opacity": "1" }));
+  lg.appendChild(mk("stop", { offset: "100%", "stop-color": "#B4D3E6", "stop-opacity": "1" }));
+  defs.appendChild(lg);
+  svg.appendChild(defs);
+
+  gGeo.appendChild(mk("path", { d: seaD, fill: "url(#deep)" }));
+
+  /* 沙滩浅色描边 */
+  gGeo.appendChild(mk("path", { d: smooth(COAST), fill: "none", stroke: "#F6EBD7", "stroke-width": 6,
+    "vector-effect": "non-scaling-stroke", "stroke-linecap": "round", opacity: ".85" }));
+  gGeo.appendChild(mk("path", { d: smooth(COAST), fill: "none", stroke: "#A9C9DC", "stroke-width": 1,
+    "vector-effect": "non-scaling-stroke", "stroke-linecap": "round", opacity: ".7" }));
+
+  /* 陆地上的浅色丘陵、稻田 */
+  gGeo.appendChild(mk("ellipse", { cx: px(115.243).toFixed(2), cy: py(-8.512).toFixed(2), rx: 8.6, ry: 6.4, fill: "#EDF3E4", opacity: ".9" }));
+  gGeo.appendChild(mk("ellipse", { cx: px(115.272).toFixed(2), cy: py(-8.442).toFixed(2), rx: 6.8, ry: 5.2, fill: "#E2EEDA", opacity: ".95" }));
+  gGeo.appendChild(mk("ellipse", { cx: px(115.150).toFixed(2), cy: py(-8.695).toFixed(2), rx: 4.6, ry: 3.4, fill: "#FBEFE3", opacity: ".85" }));
+
+  /* 主要道路（示意）*/
+  var ROADS = [
+    [[115.120,-8.658],[115.150,-8.678],[115.168,-8.706],[115.173,-8.730],[115.170,-8.748],[115.166,-8.760],[115.150,-8.776],[115.130,-8.790]],
+    [[115.163,-8.736],[115.140,-8.776],[115.116,-8.802],[115.098,-8.822],[115.090,-8.834]],
+    [[115.098,-8.822],[115.130,-8.842],[115.170,-8.848],[115.196,-8.838]],
+    [[115.166,-8.690],[115.190,-8.658],[115.211,-8.618],[115.232,-8.568],[115.246,-8.520],[115.262,-8.470],[115.278,-8.437]],
+    [[115.246,-8.520],[115.300,-8.520],[115.320,-8.560]]
+  ];
+  ROADS.forEach(function(r){
+    var d = smooth(r.map(function(p){ return P(p[0], p[1]); }));
+    gGeo.appendChild(mk("path", { d: d, fill: "none", stroke: "#E9E0D0", "stroke-width": 4.4,
+      "vector-effect": "non-scaling-stroke", "stroke-linecap": "round", opacity: ".9" }));
+    gGeo.appendChild(mk("path", { d: d, fill: "none", stroke: "#FFFFFF", "stroke-width": 2,
+      "vector-effect": "non-scaling-stroke", "stroke-linecap": "round", opacity: ".85" }));
+  });
+
+  /* 别墅 */
+  gGeo.appendChild(mk("circle", { cx: px(VILLA.lon).toFixed(2), cy: py(VILLA.lat).toFixed(2), r: .5, fill: "#2A2420", opacity: ".5" }));
+
+  /* 地名（不随缩放变大）*/
+  var LABELS = [
+    { t: "苍古", lon: 115.113, lat: -8.663, c: "#9C9284" },
+    { t: "水明漾", lon: 115.150, lat: -8.671, c: "#C08464" },
+    { t: "库塔", lon: 115.188, lat: -8.720, c: "#9C9284" },
+    { t: "DPS 机场", lon: 115.132, lat: -8.756, c: "#8FA9BA" },
+    { t: "金巴兰", lon: 115.186, lat: -8.800, c: "#9C9284" },
+    { t: "乌鲁瓦图", lon: 115.062, lat: -8.845, c: "#9C8F7E" },
+    { t: "乌布", lon: 115.222, lat: -8.516, c: "#7E9876" },
+    { t: "德格拉朗", lon: 115.292, lat: -8.432, c: "#8AA283" },
+    { t: "印度洋", lon: 115.075, lat: -8.878, c: "#8FB6CB" }
+  ];
+  var labels = [];
+  LABELS.forEach(function(L){
+    var n = mk("text", { "font-size": "1.02", fill: L.c, "text-anchor": "middle",
+      "font-family": "-apple-system,BlinkMacSystemFont,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif",
+      "letter-spacing": ".05", "font-weight": "600" });
+    n.textContent = L.t;
+    gLab.appendChild(n);
+    labels.push({ n: n, x: px(L.lon), y: py(L.lat) });
+  });
+
+  var pins = [];
+  var pinMap = {};
+
+  function segAttrs(mode){
+    if (mode === "walk") return { stroke: "#B4AEA3", "stroke-width": 1.7, "stroke-dasharray": "1 4.5", "stroke-linecap": "round" };
+    if (mode === "ride") return { stroke: "#D08A6E", "stroke-width": 1.8, "stroke-dasharray": "5 4", "stroke-linecap": "round" };
+    return { stroke: "#8C857A", "stroke-width": 2.1, "stroke-linecap": "round" };
+  }
+
+  function buildMap(days){
+    while (gRoute.firstChild) gRoute.removeChild(gRoute.firstChild);
+    while (gPins.firstChild) gPins.removeChild(gPins.firstChild);
+    pins = []; pinMap = {};
+
+    days.forEach(function(day){
+      for (var i = 1; i < day.stops.length; i++) {
+        var a = day.stops[i - 1], b = day.stops[i];
+        var mode = (b.leg && b.leg.m) || "drive";
+        var at = segAttrs(mode);
+        at.d = "M" + px(a.lon).toFixed(2) + " " + py(a.lat).toFixed(2) + "L" + px(b.lon).toFixed(2) + " " + py(b.lat).toFixed(2);
+        at.fill = "none";
+        at["vector-effect"] = "non-scaling-stroke";
+        at.opacity = ".9";
+        gRoute.appendChild(mk("path", at));
+      }
+    });
+
+    days.forEach(function(day){
+      day.stops.forEach(function(s, i){
+        var g = mk("g", { "class": "pin" });
+        var halo = mk("circle", { r: 2.3, fill: day.color, opacity: "0", "class": "halo" });
+        var c = mk("circle", { r: 1.05, fill: "#fff", stroke: day.color, "stroke-width": .42 });
+        var t = mk("text", { x: 0, y: .38, "font-size": 1.0, "text-anchor": "middle", fill: day.color,
+          "font-weight": "800", "font-family": "-apple-system,BlinkMacSystemFont,PingFang SC,Microsoft YaHei,sans-serif" });
+        t.textContent = String(i + 1);
+        g.appendChild(halo); g.appendChild(c); g.appendChild(t);
+        gPins.appendChild(g);
+        var item = { key: s.__key, g: g, halo: halo, c: c, t: t, x: px(s.lon), y: py(s.lat), color: day.color };
+        pins.push(item); pinMap[s.__key] = item;
+        g.addEventListener("click", function(){ setActive(s.__key, true); });
+      });
+    });
+    applyTransform({ s: cur.s, tx: cur.tx, ty: cur.ty });
+  }
+
+  var cur = { s: 1, tx: 0, ty: 0 };
+  var anim = null;
+
+  function applyTransform(t){
+    cur.s = t.s; cur.tx = t.tx; cur.ty = t.ty;
+    var str = "translate(" + t.tx.toFixed(3) + " " + t.ty.toFixed(3) + ") scale(" + t.s.toFixed(4) + ")";
+    gGeo.setAttribute("transform", str);
+    gRoute.setAttribute("transform", str);
+    for (var i = 0; i < pins.length; i++) {
+      var p = pins[i];
+      p.g.setAttribute("transform", "translate(" + (p.x * t.s + t.tx).toFixed(2) + " " + (p.y * t.s + t.ty).toFixed(2) + ")");
+    }
+    for (var j = 0; j < labels.length; j++) {
+      var L = labels[j];
+      L.n.setAttribute("x", (L.x * t.s + t.tx).toFixed(2));
+      L.n.setAttribute("y", (L.y * t.s + t.ty).toFixed(2));
+    }
+  }
+
+  var VB = { cx: 14.5, cy: 28, w: 32, h: 58 };
+  function setViewBox(){
+    var box = svg.getBoundingClientRect();
+    var aspect = (box.width && box.height) ? box.width / box.height : 0.8;
+    var h = 58, w = h * aspect;
+    if (w < 26) { w = 26; }
+    VB.h = h; VB.w = w;
+    svg.setAttribute("viewBox", (VB.cx - w / 2).toFixed(2) + " " + (VB.cy - h / 2).toFixed(2) + " " + w.toFixed(2) + " " + h.toFixed(2));
+  }
+
+  var lastFitS = 1;
+  function fitDays(days, animate){
+    var xs = [], ys = [];
+    days.forEach(function(d){ d.stops.forEach(function(s){ xs.push(px(s.lon)); ys.push(py(s.lat)); }); });
+    var minx = Math.min.apply(null, xs), maxx = Math.max.apply(null, xs);
+    var miny = Math.min.apply(null, ys), maxy = Math.max.apply(null, ys);
+    var bw = Math.max(maxx - minx, 3.2), bh = Math.max(maxy - miny, 3.2);
+    var s = Math.min(VB.w * 0.84 / bw, VB.h * 0.84 / bh);
+    s = Math.min(s, 2.9);
+    if (s < 0.85) s = 0.85;
+    lastFitS = s;
+    var bx = (minx + maxx) / 2, by = (miny + maxy) / 2;
+    var t = { s: s, tx: VB.cx - bx * s, ty: VB.cy - by * s };
+    animate ? tween(t) : applyTransform(t);
+  }
+
+  function focusStop(key, animate){
+    var p = pinMap[key];
+    if (!p) return;
+    var s = Math.max(lastFitS * 1.5, 2.0);
+    s = Math.min(s, 3.8);
+    var t = { s: s, tx: VB.cx - p.x * s, ty: VB.cy - p.y * s };
+    animate ? tween(t) : applyTransform(t);
+  }
+
+  function tween(target){
+    if (anim) cancelAnimationFrame(anim);
+    var from = { s: cur.s, tx: cur.tx, ty: cur.ty };
+    var t0 = (new Date()).getTime(), dur = 460;
+    function step(){
+      var k = ((new Date()).getTime() - t0) / dur;
+      if (k > 1) k = 1;
+      var e = 1 - Math.pow(1 - k, 3);
+      applyTransform({
+        s: from.s + (target.s - from.s) * e,
+        tx: from.tx + (target.tx - from.tx) * e,
+        ty: from.ty + (target.ty - from.ty) * e
+      });
+      if (k < 1) anim = requestAnimationFrame(step);
+    }
+    anim = requestAnimationFrame(step);
+  }
+
+  var mini = document.getElementById("mini");
+  var miniT = document.getElementById("miniT");
+  var miniN = document.getElementById("miniN");
+  var activeKey = null;
+
+  function setActive(key, moveMap){
+    if (!key) return;
+    var sameKey = (key === activeKey);
+    activeKey = key;
+    var cards = document.querySelectorAll(".card.active");
+    for (var i = 0; i < cards.length; i++) cards[i].classList.remove("active");
+    var card = document.querySelector('.card[data-key="' + key + '"]');
+    if (card) card.classList.add("active");
+
+    for (var j = 0; j < pins.length; j++) {
+      var p = pins[j];
+      var on = (p.key === key);
+      p.halo.setAttribute("opacity", on ? ".28" : "0");
+      p.c.setAttribute("r", on ? "1.5" : "1.05");
+      p.c.setAttribute("fill", on ? p.color : "#fff");
+      p.t.setAttribute("fill", on ? "#fff" : p.color);
+      p.g.setAttribute("opacity", on ? "1" : "0.92");
+      if (on) { gPins.appendChild(p.g); }
+    }
+
+    if (card && card.__stop) {
+      var s = card.__stop;
+      miniT.textContent = "Day " + s.__day.id + " · " + s.t;
+      miniN.textContent = s.name;
+      mini.style.setProperty("--mc", s.__day.color);
+      if (moveMap && !sameKey) focusStop(key, true);
+    }
+  }
+
+  /* ---------- day switching ---------- */
+  var currentDay = "1";
+  function setDay(id, opts){
+    var o = opts || {};
+    currentDay = String(id);
+    var btns = document.querySelectorAll(".pill");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].setAttribute("aria-selected", btns[i].getAttribute("data-day") === currentDay ? "true" : "false");
+    }
+    var secs = document.querySelectorAll(".day");
+    for (var j = 0; j < secs.length; j++) {
+      var show = currentDay === "all" || secs[j].getAttribute("data-day") === currentDay;
+      secs[j].hidden = !show;
+    }
+    var days = currentDay === "all" ? DAYS : DAYS.filter(function(d){ return String(d.id) === currentDay; });
+    buildMap(days);
+    setViewBox();
+    activeKey = null;
+    fitDays(days, false);
+    var first = document.querySelector('.day:not([hidden]) .card');
+    if (first) setActive(first.getAttribute("data-key"), false);
+    if (o.scroll) {
+      var wrap = document.querySelector(".pills-wrap");
+      var y = wrap.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) - 58;
+      window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+    }
+  }
+
+  pillsEl.addEventListener("click", function(e){
+    var t = e.target;
+    while (t && t !== pillsEl && !(t.className && String(t.className).indexOf("pill") === 0)) t = t.parentNode;
+    if (!t || t === pillsEl) return;
+    setDay(t.getAttribute("data-day"), { scroll: true });
+  });
+
+  /* ---------- scroll spy ---------- */
+  var ticking = false;
+  function onScroll(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      ticking = false;
+      var items = document.querySelectorAll(".card");
+      var line = window.innerHeight * (window.innerWidth <= 980 ? 0.62 : 0.4);
+      var best = null, bestD = 1e9;
+      for (var i = 0; i < items.length; i++) {
+        var n = items[i];
+        if (n.offsetParent === null) continue;
+        var r = n.getBoundingClientRect();
+        if (r.bottom < 60 || r.top > window.innerHeight - 20) continue;
+        var d = Math.abs(r.top + r.height / 2 - line);
+        if (d < bestD) { bestD = d; best = n; }
+      }
+      if (best) {
+        var k = best.getAttribute("data-key");
+        if (k !== activeKey) setActive(k, true);
+      }
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  /* ---------- zoom / collapse / resize ---------- */
+  document.getElementById("zIn").addEventListener("click", function(){
+    var s2 = Math.min(cur.s * 1.4, 6);
+    var wx = (VB.cx - cur.tx) / cur.s, wy = (VB.cy - cur.ty) / cur.s;
+    tween({ s: s2, tx: VB.cx - wx * s2, ty: VB.cy - wy * s2 });
+  });
+  document.getElementById("zOut").addEventListener("click", function(){
+    var days = currentDay === "all" ? DAYS : DAYS.filter(function(d){ return String(d.id) === currentDay; });
+    fitDays(days, true);
+  });
+
+  var colMap = document.getElementById("colMap");
+  var collapse = document.getElementById("collapse");
+  collapse.addEventListener("click", function(){
+    var mini = colMap.className.indexOf("mini") >= 0;
+    colMap.className = mini ? "col-map" : "col-map mini";
+    collapse.textContent = mini ? "收起地图" : "展开地图";
+    setTimeout(function(){ setViewBox(); layoutPins(); }, 260);
+  });
+
+  var rz;
+  window.addEventListener("resize", function(){
+    clearTimeout(rz);
+    rz = setTimeout(function(){
+      setViewBox();
+      var days = currentDay === "all" ? DAYS : DAYS.filter(function(d){ return String(d.id) === currentDay; });
+      fitDays(days, false);
+    }, 180);
+  });
+
+  setViewBox();
+  setDay("1", { scroll: false });
+  setTimeout(function(){ setViewBox(); setDay(currentDay, {}); }, 60);
+})();
+</script>
+</body>
+</html>
