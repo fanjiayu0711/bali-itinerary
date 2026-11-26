@@ -676,9 +676,25 @@ var DATA = {"DAYS":[{"id":1,"color":"#EE6C4D","soft":"#FFF0EA","day":"Day One ·
     var first = document.querySelector('.day:not([hidden]) .card');
     if (first) setActive(first.getAttribute("data-key"), false);
     if (o.scroll) {
-      var wrap = document.querySelector(".pills-wrap");
-      var y = wrap.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) - 58;
-      window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      /* 切 Day 后回到页面最顶端：左侧列表容器与整页滚动位置一起归零 */
+      var listEl = document.getElementById("list");
+      if (listEl) listEl.scrollTop = 0;
+      var colMap = document.getElementById("colMap");
+      if (colMap) colMap.scrollTop = 0;
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce) {
+        window.scrollTo(0, 0);
+      } else {
+        try {
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        } catch (err) {
+          window.scrollTo(0, 0);
+        }
+        /* 兜底：动画被打断或后台标签页不跑动画时，最终一定停在顶端 */
+        setTimeout(function(){
+          if ((window.pageYOffset || document.documentElement.scrollTop || 0) > 0) window.scrollTo(0, 0);
+        }, 600);
+      }
     }
   }
 
